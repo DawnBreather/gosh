@@ -5,7 +5,7 @@
 ## Install
 
 ```bash
-go get -v github.com/abdfnx/gosh@v0.3.9
+go get -v github.com/DawnBreather/gosh
 ```
 
 ## Examples
@@ -44,7 +44,7 @@ func Run(cmd string) {
 	err, out, errout := ShellOutput("")
 
 	if runtime.GOOS == "windows" {
-		err, out, errout = PowershellOutput(cmd)
+		err, out, errout = PowershellOutput(cmd, []string{"VAR1=VALUE1"})
 	} else {
 		err, out, errout = ShellOutput(cmd)
 	}
